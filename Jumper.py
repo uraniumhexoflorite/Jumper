@@ -1,5 +1,5 @@
 #print ("Welcome to Jumper! Jumper is an equation solver capable of solving 1 and 2 variable equations. The 2 variable solver is a bit slow.")
-#from goto import goto, comefrom, label
+#yes, I know gotos aren't in python. They're to TI-BASIC as functions are to python.
 import math
 Check1 = 1
 Check2 = 1
@@ -46,7 +46,7 @@ print("Welcome to Jumper! Jumper is an equation solving program capable of solvi
 start = input("")
 dev(start)
 if start == "help":
-    goto .helpsection
+    #goto .helpsection
 #label .startup
 if start == "start":
       equation = ""
@@ -60,7 +60,7 @@ if start == "start":
       dev(varnum)
       answerx = ["x"]
       answery = ["Y"]
-      label .var2return
+      #label .var2return
       startnumber = float(input("Starting Number"))
       dev(startnumber)
       reslowbound = 0
@@ -97,9 +97,9 @@ if start == "start":
 #      if ("math.sqrt(") in equation:
 #          print(equation")
 #74
-      label .return2
+      #label .return2
       while (jumper <= upperlimit) and (varnum == 1):
-           label .resreturn
+           #label .resreturn
            jumper = (jumper + resolution)
            if eval(equation) == True:
                Check1 = 1
@@ -109,7 +109,7 @@ if start == "start":
                if (Check1 == 1) == True:
                    jumper = (jumper - resolution)
                if (rescount < rescountmax):
-                   goto .reschange
+                   #goto .reschange
                if (rescount < rescountmax) and (Check1 != Check2):
                    if varnum == 1:
                        print("".join("The variable is equal to", str(jumper), "."))
@@ -121,42 +121,42 @@ if start == "start":
                            print(answery)
                        reslowbound = reslowbound + 1
                        jumper = jumper + finalres
-                       goto .var2return
+                       #goto .var2return
                    supportvar = input("Solve another equation?")
                    dev(supportvar)
                    if supportvar == "no":
                         exit()
                    if supportvar == "yes":
-                        goto .startup
+                        #goto .startup
                if rescount > rescountmax:
                     print("Out of range")
            if (jumper >= upperlimit) and (y < upperlimit) and (varnum == 2):
                 jumper = startnumber
                 y = finalres + y
-                goto .return2
+                #goto .return2
       if reslowbound != 0:
             reslowbound = 0
             supportvar = "sv"
-            goto .sv
-      label .sv
+            #goto .sv
+      #label .sv
       if supportvar == "sv":
             supportvar = input("Go to the help section")
             dev(supportvar)
             if supportvar == "yes":
-                goto .helpsection
+                #goto .helpsection
             else:
                 supportvar = input("Start Jumper?")
                 dev(supportvar)
                 if supportvar == "yes":
-                    goto .startup
-      label .reschange
+                    #goto .startup
+      #label .reschange
       if rescount < rescountmax:
             jumper = jumper - resolution
             resolution = resolution / 10
             rescount = rescount + 1
             print(rescount)
-            goto .resreturn
-      label .helpsection
+            #goto .resreturn
+      #label .helpsection
       if start == "help":
             print("insert help text")
             
