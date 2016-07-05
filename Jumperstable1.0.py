@@ -1,28 +1,4 @@
 import math
-#from goto import goto as goto
-#from goto import goto, label
-# Check1 = 1
-# Check2 = 1
-# Check4 = 1
-# equation = ""
-# cvar = 2
-# resolution = 1
-# upperlimit = 0
-# equation = 0
-# varnum = 0
-# answerx = []
-# answery = []
-# label .var2return
-# startnumber = 0
-# reslowbound = 0
-# resupperbound = 10
-# rescount = 0
-# initialres = 0
-# finalres = 0
-# jumper = startnumber
-# y = startnumber
-# rescountmax = 0
-# supportvar = ""
 
 equation = ""
 resolution = 0
@@ -76,24 +52,24 @@ def startup():
     global Check2
     # globals was here
     equation = ""
-    print(equation)
+    #print(equation)
     cvar = 0
-    print(cvar)
+    #print(cvar)
     resolution = 1
-    print(resolution)
+    #print(resolution)
     upperlimit = float(input("Upper Limit"))
-    print(upperlimit)
+    #print(upperlimit)
     # dev(upperlimit)
     equation = input("Equation")
-    print(equation)
+    #print(equation)
     # dev(equation)
     varnum = int(input("Number of Variables (1 or 2)"))
-    print(varnum)
+    #print(varnum)
     # dev(varnum)
     answerx = ["x"]
-    print(answerx)
+    #print(answerx)
     answery = ["Y"]
-    print(answery)
+    #print(answery)
     # label .var2return
     startnumber = float(input("Starting Number"))
     # dev(startnumber)
@@ -114,7 +90,7 @@ def startup():
         resupperbound = float(math.log10(initialres))
     rescountmax = float((-1 * math.log10(finalres)) + math.log10(initialres))
     vlist = []
-    print(rescount)
+    #print(rescount)
 
     while "x" in equation:
         print(equation)
@@ -124,7 +100,7 @@ def startup():
         print(equation)
     # print("".join([equation[:eqf(equation)], " > ", equation[eqf(equation):]]))
     equation = "".join([equation[:equation.index("=")], " > ", equation[equation.index("=") + 1:]])
-    print(equation)
+    #print(equation)
     y = startnumber
     if eval(equation) == True:
         Check1 = 1
@@ -132,12 +108,12 @@ def startup():
     else:
         Check1 = 0
         Check2 = 0
-    print(Check1)
-    print(Check2)
-    print(equation)
-    print(jumper)
-    print(varnum)
-    print(y)
+    #print(Check1)
+    #print(Check2)
+    #print(equation)
+    #print(jumper)
+    #print(varnum)
+    #print(y)
     # ==============================================================================
     # ==============================================================================
     ##    return(equation)
@@ -156,10 +132,10 @@ def startup():
     ##    return(rescountmax)
     ##    return(vlist)
     ##    return(cvar)
-    print("startup")
-    print(jumper)
-    print(varnum)
-    print(y)
+    #print("startup")
+    #print(jumper)
+    #print(varnum)
+    #print(y)
 
 
 # ==============================================================================
@@ -171,7 +147,7 @@ def reschange(jumper, resolution, rescount, rescountmax):
         # jumper = round(jumper,rescount)
         resolution = resolution / 10
         rescount = rescount + 1
-        print(rescount)
+        #print(rescount)
         resreturn(jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, Check2, rescount, rescountmax,reschange, startnumber, initialres, reslowbound, answerx, answery, finalres, question, supportvar,cvar)
         # return rescount
         # return rescountmax
@@ -205,7 +181,7 @@ def question():
             else:
                 dev(supportvar)
                 question()
-    print("question")
+    #print("question")
 #    return cvar,supportvar
 
 def start2(jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, Check2, rescount, rescountmax, reschange, startnumber, initialres, reslowbound, answerx, answery, finalres, question, supportvar, cvar):
@@ -221,7 +197,8 @@ def start2(jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, C
     # start = input("")
     dev(start)
     if start == "help":
-        print("helpsection(supportvar)")
+        print("work in progress")
+        #print("helpsection(supportvar)")
     # label .startup
     # startup(equation,resolution,cvar,upperlimit,varnum,answerx,answery,startnumber,reslowbound,resupperbound,rescount,initialres,finalres,jumper,y,vlist,rescountmax,Check1,Check2)
     #
@@ -233,7 +210,7 @@ def start2(jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, C
     cvar = 3
     print(cvar)
     equationsolver(jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, Check2, rescount, rescountmax,reschange, startnumber, initialres, reslowbound, answerx, answery, finalres, question, supportvar,cvar)
-    print("start2")
+    #print("start2")
 #    return jumper,upperlimit,varnum,y,resolution,vlist,equation,Check1,Check2,rescount,rescountmax,reschange,startnumber,initialres,reslowbound,answerx,answery,finalres,question,supportvar,cvar
 
 
@@ -294,13 +271,13 @@ def equationsolver(jumper,upperlimit,varnum,y,resolution,vlist,equation,Check1,C
 
     vlist = []
     while "x" in equation:
-        print(equation)
+        #print(equation)
         equation = (
             "".join([str(equation[:(equation.index("x"))]), "jumper", (equation[(len("x") + equation.index("x")):])]))
         # (len(equation)-int(equation.index("x")))
-        print(equation)
+        #print(equation)
     equation = "".join([equation[:equation.index("=")], " > ", equation[equation.index("=") + 1:]])
-    print(equation)
+    #print(equation)
     y = startnumber
     if eval(equation) == True:
         Check1 = 1
@@ -309,19 +286,19 @@ def equationsolver(jumper,upperlimit,varnum,y,resolution,vlist,equation,Check1,C
         Check1 = 0
         Check2 = 0
     # ===============================================================================
-    print("equation solver start")
+    #print("equation solver start")
     # startup()
-    print(jumper)
-    print(varnum)
-    print(y)
+    #print(jumper)
+    #print(varnum)
+    #print(y)
     while (((jumper <= upperlimit) and (varnum == 1)) and not ((y <= upperlimit) and (varnum == 2))) == True and (jumper < 2 * upperlimit) == True:
         #equationsolvermain(jumper,upperlimit,varnum,y,resolution,vlist,equation,Check1,Check2,rescount,rescountmax,reschange,startnumber,initialres,reslowbound,answerx,answery,finalres,question,supportvar,cvar)
         # label .resreturn
-        print("while entered")
+        #print("while entered")
         jumper = round(jumper, 1)
         jumper += 0.1
-        print(jumper)
-        print(resolution)
+        #print(jumper)
+        #print(resolution)
         # vlist = vlist + [jumper]
         # print(vlist)
         if eval(equation) == True:
@@ -352,8 +329,8 @@ def equationsolver(jumper,upperlimit,varnum,y,resolution,vlist,equation,Check1,C
             ##                jumper = float(jumper + (2.5*resolution))
             ##            else:
             ##                jumper = float(jumper - (2.5*resolution))
-            if (rescount < rescountmax):
-                print("reschange")
+            #if (rescount < rescountmax):
+            #    print("reschange")
             # #reschange(jumper, resolution, rescount, rescountmax)
             if varnum == 1:
                 # if Check1 == 1:
@@ -401,7 +378,7 @@ def equationsolver(jumper,upperlimit,varnum,y,resolution,vlist,equation,Check1,C
 
 def equationsolvermain(jumper,upperlimit,varnum,y,resolution,vlist,equation,Check1,Check2,rescount,rescountmax,reschange,startnumber,initialres,reslowbound,answerx,answery,finalres,question,supportvar,cvar):
         # label .resreturn
-        print("while entered")
+        #print("while entered")
         jumper = (jumper + resolution)
         print(jumper)
         # jumper = round(jumper,int(math.log10(resolution))+1)
@@ -435,8 +412,8 @@ def equationsolvermain(jumper,upperlimit,varnum,y,resolution,vlist,equation,Chec
             ##                jumper = float(jumper + (2.5*resolution))
             ##            else:
             ##                jumper = float(jumper - (2.5*resolution))
-            if (rescount < rescountmax):
-                print("reschange")
+            #if (rescount < rescountmax):
+                #print("reschange")
             #  #reschange(jumper, resolution, rescount, rescountmax)
             if varnum == 1:
                 # if Check1 == 1:
@@ -451,9 +428,9 @@ def equationsolvermain(jumper,upperlimit,varnum,y,resolution,vlist,equation,Chec
                 if Check1 == 0:
                     jumper = jumper + resolution
                     jumper = round(jumper, 1)
-                print(Check1)
-                print(Check2)
-                print(vlist)
+                #print(Check1)
+                #print(Check2)
+                #print(vlist)
                 print("".join(["The variable is equal to ", str(jumper), "."]))
             if (varnum == 2) and (y <= upperlimit):
                 if ((reslowbound % 2) == 0 or (reslowbound == 1)) and ((jumper % 2) == 0 or (jumper == 1)):
