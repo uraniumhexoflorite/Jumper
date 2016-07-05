@@ -458,4 +458,4 @@ def equationsolvermain(jumper,upperlimit,varnum,y,resolution,vlist,equation,Chec
     #return jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, Check2, rescount, rescountmax, reschange, startnumber, initialres, reslowbound, answerx, answery, finalres, question, supportvar, cvar
 
 start2(jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, Check2, rescount, rescountmax, reschange, startnumber, initialres, reslowbound, answerx, answery, finalres, question, supportvar, cvar)
-print("end")
+#print("end")
