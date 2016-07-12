@@ -457,5 +457,7 @@ def equationsolvermain(jumper,upperlimit,varnum,y,resolution,vlist,equation,Chec
     #print("solver")
     #return jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, Check2, rescount, rescountmax, reschange, startnumber, initialres, reslowbound, answerx, answery, finalres, question, supportvar, cvar
 
-start2(jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, Check2, rescount, rescountmax, reschange, startnumber, initialres, reslowbound, answerx, answery, finalres, question, supportvar, cvar)
+if __name__ == '__main__':
+
+    start2(jumper, upperlimit, varnum, y, resolution, vlist, equation, Check1, Check2, rescount, rescountmax, reschange, startnumber, initialres, reslowbound, answerx, answery, finalres, question, supportvar, cvar)
 #print("end")
